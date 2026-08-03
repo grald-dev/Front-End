@@ -8,25 +8,24 @@
 </head>
 <body>
 
-             <main class="main-content">
+    <main class="main-content">
         <!-- Top Header Bar -->
         <div class="content-header">
             <div class="breadcrumb">
                 <span>Marketing & Sales / Project Requests (REQ009 - REQ015)</span>
             </div>
-            
         </div>
 
         <!-- Tab Navigation -->
         <div class="tab-nav">
-            <a href="#" class="active">Project Requests</a>
-            <a href="#">Quotation Builder</a>
-            <a href="#">Sales Ledger</a>
-            <a href="#">Saved Records</a>
+            <a href="#" class="tab-link active" onclick="switchTab(event, 'projectRequestSection')">Project Requests</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'quotationBuilderSection')">Quotation Builder</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'salesLedgerSection')">Sales Ledger</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'savedRecordsSection')">Saved Records</a>
         </div>
 
-        <!-- Page Body -->
-        <div class="page-body">
+        <!-- Page Body / Tab Contents -->
+        <div id="projectRequestSection" class="tab-content active-content">
             
             <!-- Action Toolbar -->
             <div class="toolbar">
@@ -66,9 +65,7 @@
                         <label for="telephone_no">Telephone No</label>
                         <input type="text" id="telephone_no" class="form-control" placeholder="">
                     </div>
-                    <div class="form-group">
-                        <!-- Empty spacer for layout -->
-                    </div>
+                    <div class="form-group"></div>
                 </div>
 
                 <div class="form-row">
@@ -76,9 +73,7 @@
                         <label for="tin_number">TIN Number</label>
                         <input type="text" id="tin_number" class="form-control" placeholder="">
                     </div>
-                    <div class="form-group">
-                         <!-- Empty spacer for layout -->
-                    </div>
+                    <div class="form-group"></div>
                 </div>
 
                 <div class="form-row full">
@@ -87,8 +82,7 @@
                         <textarea id="company_address" class="form-control"></textarea>
                     </div>
                 </div>
-
-            </div> <!-- End Client Information -->
+            </div>
 
             <!-- Project Request Details Section -->
             <div class="form-section">
@@ -105,11 +99,11 @@
                     </div>
                     <div class="form-group">
                         <label for="start_date">Start Date</label>
-                        <input type="date" id="start_date" class="form-control" placeholder="dd/mm/yyyy">
+                        <input type="date" id="start_date" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="target_end_date">Target End Date</label>
-                        <input type="date" id="target_end_date" class="form-control" placeholder="dd/mm/yyyy">
+                        <input type="date" id="target_end_date" class="form-control">
                     </div>
                 </div>
 
@@ -131,10 +125,173 @@
                         <input type="text" id="account_exec" class="form-control" placeholder="">
                     </div>
                 </div>
-
-            </div> <!-- End Project Request Details -->
-
+            </div>
         </div>
+
+        <!-- Quotation Builder Section -->
+        <div id="quotationBuilderSection" class="tab-content hidden">
+            <div class="toolbar">
+                <button class="btn btnGenerate_Quotation"><i class='bx bx-plus'></i> Generate Quotation</button>
+                <button class="btn btnPrint_Quotation"><i class='bx bx-printer'></i> Print Quotation</button>
+                <button class="btn btnSave"><i class='bx bx-save'></i> Save</button>
+            </div>
+            <!-- Ilagay dito ang form o nilalaman ng Quotation Builder -->
+            <div class="form-section">
+            <h3 class="section-title">Quotation Overview</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quotation_id">Quotation ID</label>
+                    <input type="text" id="quotation_id" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="project_id">Project ID</label>
+                    <input type="text" id="project_id" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="client_id">Client ID</label>
+                    <input type="text" id="client_id" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="date_issued">Date Issued</label>
+                    <input type="date" id="date_issued" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="attention_to">Attention To</label>
+                    <input type="text" id="attention_to" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="telephone_no">Telephone No</label>
+                    <input type="text" id="telephone_no" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subtotal">Subtotal</label>
+                    <input type="text" id="subtotal" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="delivery_charge">Delivery Charge</label>
+                    <input type="text" id="delivery_charge" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="total_amount">Total Amount</label>
+                    <input type="text" id="total_amount" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="validity_period">Validity Period</label>
+                    <input type="text" id="validity_period" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prepared_by">Prepared By</label>
+                    <input type="text" id="prepared_by" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="conforme_by">Conforme By</label>
+                    <input type="text" id="conforme_by" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" id="status" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="payment_terms">Payment Terms</label>
+                    <input type="text" id="payment_terms" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row full">
+                <div class="form-group">
+                    <label for="terms_conditions">Terms & Conditions</label>
+                    <textarea id="terms_conditions" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quotation Line Items Section -->
+        <div class="form-section">
+            <h3 class="section-title">Quotation Line Items</h3>
+            <p style="color: #777; font-size: 0.9rem;">No line items added yet. Click "+ Generate Quotation" to populate.</p>
+        </div>
+        </div>
+
+        <!-- Sales Ledger Section -->
+        <div id="salesLedgerSection" class="tab-content hidden">
+           <!-- Automated Sales Ledger Section -->
+        <div class="form-section">
+            <h3 class="section-title">Automated Sales Ledger</h3>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="transaction_id">Transaction ID</label>
+                    <input type="text" id="transaction_id" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="client_name">Client Name</label>
+                    <input type="text" id="client_name" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="project_id">Project ID</label>
+                    <input type="text" id="project_id" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="amount_recorded">Amount Recorded</label>
+                    <input type="text" id="amount_recorded" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date_of_transaction">Date of Transaction</label>
+                    <input type="date" id="date_of_transaction" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="payment_mode">Payment Mode</label>
+                    <input type="text" id="payment_mode" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="reference_number">Reference Number</label>
+                    <input type="text" id="reference_number" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="ledger_status">Ledger Status</label>
+                    <input type="text" id="ledger_status" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row full">
+                <div class="form-group">
+                    <label for="sales_analysis_remarks">Sales Analysis Remarks</label>
+                    <textarea id="sales_analysis_remarks" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Saved Records Section -->
+        <div id="savedRecordsSection" class="tab-content hidden">
+            <div class="form-section">
+                <h3 class="section-title">Saved Records Content</h3>
+            </div>
+        </div>
+
     </main>
+
+  
 </body>
 </html>
