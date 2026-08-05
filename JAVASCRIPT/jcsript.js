@@ -1,4 +1,4 @@
-// Selecting the sidebar and buttons
+// jcsript.js  Selecting the sidebar and buttons
 const sidebar = document.querySelector(".sidebar");
 const sidebarOpenBtn = document.querySelector("#sidebar-open");
 const sidebarCloseBtn = document.querySelector("#sidebar-close");
@@ -75,7 +75,7 @@ const mainContent = document.getElementById("main-content");
 
 function loadPage(page) {
 
-    fetch(`pages/${page}.html`)
+    fetch(`../main-content/${page}.html`)
         .then(response => {
 
             if (!response.ok) {
@@ -85,9 +85,15 @@ function loadPage(page) {
             return response.text();
 
         })
-        .then(html => {
+       .then(html => {
 
             mainContent.innerHTML = html;
+
+            if (page === "marketing") {
+
+                initializeMarketingPage();
+
+            }
 
         })
         .catch(error => {
@@ -132,33 +138,7 @@ function toggleMenu(){
     subMenu.classList.toggle("open-menu");
 }
 
-function switchTab(event, sectionId) {
-  // Pigilan ang default na pag-scroll ng <a> tag sa taas ng pahina (#)
-  event.preventDefault();
 
-  // 1. Alisin ang 'active' class sa lahat ng tab links
-  const links = document.querySelectorAll('.tab-nav a');
-  links.forEach(link => link.classList.remove('active'));
 
-  // Idagdag ang 'active' class sa pinindot na link
-  event.currentTarget.classList.add('active');
 
-  // 2. Itago ang lahat ng content sections
-  const contents = document.querySelectorAll('.tab-content');
-  contents.forEach(content => {
-    content.classList.remove('active-content');
-    content.classList.add('hidden');
-  });
 
-  // 3. Ipakita lamang ang napiling seksyon
-  const targetSection = document.getElementById(sectionId);
-  if (targetSection) {
-    targetSection.classList.remove('hidden');
-    targetSection.classList.add('active-content');
-  }
-}
-
-// Pwede mong lagyan ng event listeners dito kung kinakailangan
-        document.querySelector('.btn-primary').addEventListener('click', function() {
-            alert('Generate Quotation clicked!');
-        });
