@@ -1,74 +1,64 @@
-// jcsript.js  Selecting the sidebar and buttons
+// =========================================
+// SIDEBAR
+// =========================================
+
 const sidebar = document.querySelector(".sidebar");
-const sidebarOpenBtn = document.querySelector("#sidebar-open");
-const sidebarCloseBtn = document.querySelector("#sidebar-close");
-const sidebarLockBtn = document.querySelector("#lock-icon");
+const sidebarToggleBtn = document.getElementById("sidebar-toggle");
+const sidebarLockBtn = document.getElementById("lock-icon");
 
-// Toggle lock
-const toggleLock = () => {
 
-    sidebar.classList.toggle("locked");
+let isLocked = true;
 
-    if (sidebar.classList.contains("locked")) {
+// Open / Close Sidebar
+function toggleSidebar() {
 
-        sidebar.classList.remove("hoverable");
+    sidebar.classList.toggle("close");
 
-        sidebarLockBtn.classList.replace(
-            "bx-lock-open-alt",
-            "bx-lock"
-            
-        );
+}
+
+// Lock / Unlock
+function toggleLock() {
+
+    isLocked = !isLocked;
+
+    if (isLocked) {
+
+        sidebarLockBtn.classList.remove("bx-lock-open-alt");
+        sidebarLockBtn.classList.add("bx-lock");
 
     } else {
 
-        sidebar.classList.add("hoverable");
-
-        sidebarLockBtn.classList.replace(
-            "bx-lock",
-            "bx-lock-open-alt"
-
-        );
+        sidebarLockBtn.classList.remove("bx-lock");
+        sidebarLockBtn.classList.add("bx-lock-open-alt");
 
     }
 
-};
+}
 
-// Hide sidebar
-const hideSidebar = () => {
+// Hover kapag unlocked lang
+sidebar.addEventListener("mouseenter", () => {
 
-    if (sidebar.classList.contains("hoverable")) {
-        sidebar.classList.add("close");
-    }
-
-};
-
-// Show sidebar
-const showSidebar = () => {
-
-    if (sidebar.classList.contains("hoverable")) {
+    if (!isLocked) {
         sidebar.classList.remove("close");
     }
 
-};
-
-// Sidebar events
-sidebarOpenBtn.addEventListener("click", () => {
-    sidebar.classList.remove("close");
 });
 
-sidebarCloseBtn.addEventListener("click", () => {
-    sidebar.classList.add("close");
+sidebar.addEventListener("mouseleave", () => {
+
+    if (!isLocked) {
+        sidebar.classList.add("close");
+    }
+
 });
 
+// Buttons
+sidebarToggleBtn.addEventListener("click", toggleSidebar);
 sidebarLockBtn.addEventListener("click", toggleLock);
 
-sidebar.addEventListener("mouseenter", showSidebar);
-sidebar.addEventListener("mouseleave", hideSidebar);
-
-
-// =========================
+// =========================================
 // PAGE LOADER
-// =========================
+// =========================================
 
 const menuLinks = document.querySelectorAll(".link");
 const mainContent = document.getElementById("main-content");
@@ -85,60 +75,83 @@ function loadPage(page) {
             return response.text();
 
         })
-       .then(html => {
+
+        .then(html => {
 
             mainContent.innerHTML = html;
 
-            if (page === "marketing") {
+            // initialize page scripts
+            switch(page){
 
-                initializeMarketingPage();
+                case "marketing":
+                    if(typeof initializeMarketingPage === "function"){
+                        initializeMarketingPage();
+                    }
+                    break;
+
+                case "technical":
+                    if(typeof initializeTechnicalPage === "function"){
+                        initializeTechnicalPage();
+                    }
+                    break;
 
             }
 
         })
-        .catch(error => {
 
-            console.error(error);
+        .catch(err => {
+
+            console.error(err);
 
             mainContent.innerHTML = `
-                <h2>Page Not Found</h2>
-                <p>The page "${page}.html" does not exist.</p>
+                <div style="padding:40px">
+                    <h2>404 - Page Not Found</h2>
+                    <p>${page}.html does not exist.</p>
+                </div>
             `;
 
         });
 
 }
 
+// menu click
 menuLinks.forEach(link => {
 
-    link.addEventListener("click", function (e) {
+    link.addEventListener("click", e => {
 
         e.preventDefault();
 
-        menuLinks.forEach(item => {
-            item.classList.remove("active-link");
-        });
+        menuLinks.forEach(item => item.classList.remove("active-link"));
 
-        this.classList.add("active-link");
+        link.classList.add("active-link");
 
-        const page = this.dataset.page.toLowerCase();
-
-        loadPage(page);
+        loadPage(link.dataset.page);
 
     });
 
 });
 
-// Load Analytics when website opens
+// default page
 loadPage("analytics");
 
-let subMenu = document.getElementById("subMenu");
+// =========================================
+// PROFILE MENU
+// =========================================
 
-function toggleMenu(){
+const subMenu = document.getElementById("subMenu");
+
+function toggleMenu() {
     subMenu.classList.toggle("open-menu");
 }
 
+// close kapag click sa labas
+document.addEventListener("click", function(e){
 
+    if(
+        !e.target.closest(".header-right") &&
+        !e.target.closest(".sub-menu-wrap")
+    ){
+        subMenu.classList.remove("open-menu");
+    }
 
-
-
+});

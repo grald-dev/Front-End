@@ -105,23 +105,4 @@ textarea.form-control{
     background:#fff;
 }
 
-/* Responsive */
-@media(max-width:1200px){
 
-    .form-row{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:768px){
-
-    .form-row{
-        grid-template-columns:1fr;
-    }
-
-    .toolbar{
-        flex-direction:column;
-    }
-
-}

@@ -13,7 +13,7 @@
             
             <!-- Action Toolbar -->
             <div class="toolbar">
-                <button class="btn btn-primary"><i class='bx bx-plus'></i> New Client</button>
+                <button class="btn btn-"><i class='bx bx-plus'></i> New Client</button>
                 <button class="btn btn-secondary"><i class='bx bx-plus'></i> New Project Request</button>
                 <button class="btn btn-text"><i class='bx bx-save'></i> Save Project</button>
             </div>
@@ -23,18 +23,23 @@
                 <h3 class="section-title">Client Information</h3>
                 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="client_id">Client ID</label>
-                        <input type="text" id="client_id" class="form-control" placeholder="">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="company_name">Company Name</label>
                         <input type="text" id="company_name" class="form-control" placeholder="">
                     </div>
+                    <div class="form-group">
+                        <label for="telephone_no">Telephone No</label>
+                        <input type="text" id="telephone_no" class="form-control" placeholder="">
+                    </div>
+                     <div class="form-group">
+                        <label for="payment_terms">Payment Terms</label>
+                        <input type="text" id="payment_terms" class="form-control" placeholder="">
+                    </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
+                     <div class="form-group">
                         <label for="contact_person">Contact Person</label>
                         <input type="text" id="contact_person" class="form-control" placeholder="">
                     </div>
@@ -42,29 +47,19 @@
                         <label for="email_address">Email Address</label>
                         <input type="email" id="email_address" class="form-control" placeholder="">
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="telephone_no">Telephone No</label>
-                        <input type="text" id="telephone_no" class="form-control" placeholder="">
-                    </div>
-                    <div class="form-group"></div>
-                </div>
-
-                <div class="form-row">
                     <div class="form-group">
                         <label for="tin_number">TIN Number</label>
                         <input type="text" id="tin_number" class="form-control" placeholder="">
                     </div>
-                    <div class="form-group"></div>
+                   
+                    
+                    
                 </div>
-
                 <div class="form-row full">
-                    <div class="form-group">
-                        <label for="company_address">Company Address</label>
-                        <textarea id="company_address" class="form-control"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="company_address">Company Address</label>
+                            <textarea id="company_address" class="form-control"></textarea>
+                        </div>
                 </div>
             </div>
 
@@ -74,116 +69,106 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="project_name">Project Name</label>
-                        <input type="text" id="project_name" class="form-control" placeholder="">
+                        <label for="MS_attention">Attention</label>
+                        <input type="text" id="MS_attention" class="form-control" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="subject_code">Subject Code</label>
-                        <input type="text" id="subject_code" class="form-control" placeholder="">
+                        <label for="MS_business_style">Business Style</label>
+                        <input type="text" id="MS_business_style" class="form-control" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="start_date">Start Date</label>
-                        <input type="date" id="start_date" class="form-control">
+                        <label for="MS_client_subject">Client Subject</label>
+                        <input type="text   " id="MS_client_subject" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="target_end_date">Target End Date</label>
-                        <input type="date" id="target_end_date" class="form-control">
+                        <label for="MS_representative">Representative</label>
+                        <input type="text" id="MS_representative" class="form-control">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="status">Status</label>
-                        <input type="text" id="status" class="form-control" placeholder="">
+                        <label for="MS_contact_person">Contact Person</label>
+                        <input type="text" id="MS_contact_person" class="form-control" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="dept_forwarding">Department Forwarding</label>
-                        <input type="text" id="dept_forwarding" class="form-control" placeholder="">
+                        <label for="MS_account_executive">Account Executive</label>
+                        <input type="text" id="MS_account_executive" class="form-control" placeholder="">
                     </div>
-                    <div class="form-group">
-                        <label for="payment_confirmed">Payment Confirmed?</label>
-                        <input type="text" id="payment_confirmed" class="form-control" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="account_exec">Account Exec</label>
-                        <input type="text" id="account_exec" class="form-control" placeholder="">
-                    </div>
+                    
                 </div>
             </div>
         </div>
 
         <!-- Quotation Builder Section -->
         <div id="quotationBuilderSection" class="tab-content hidden">
-            <div class="toolbar">
-                <button class="btn btnGenerate_Quotation"><i class='bx bx-plus'></i> Generate Quotation</button>
-                <button class="btn btnPrint_Quotation"><i class='bx bx-printer'></i> Print Quotation</button>
-                <button class="btn btnSave"><i class='bx bx-save'></i> Save</button>
-            </div>
+            
             <!-- Ilagay dito ang form o nilalaman ng Quotation Builder -->
+            
             <div class="form-section">
             <h3 class="section-title">Quotation Overview</h3>
-            
+               <!-- 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="quotation_id">Quotation ID</label>
-                    <input type="text" id="quotation_id" class="form-control" placeholder="">
+                    <label for="MS_title"> TItle</label>
+                    <input type="text" id="MS_title" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="project_id">Project ID</label>
-                    <input type="text" id="project_id" class="form-control" placeholder="">
+                    <label for="MS_store">Store</label>
+                    <input type="text" id="MS_store" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="client_id">Client ID</label>
-                    <input type="text" id="client_id" class="form-control" placeholder="">
+                    <label for="MS_requirements">Requirements</label>
+                    <input type="text" id="MS_requirements" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="date_issued">Date Issued</label>
-                    <input type="date" id="date_issued" class="form-control">
+                    <label for="MS_description">Description</label>
+                    <input type="text" id="MS_description" class="form-control">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="attention_to">Attention To</label>
-                    <input type="text" id="attention_to" class="form-control" placeholder="">
+                    <label for="MS_width">Width</label>
+                    <input type="text" id="MS_width" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" id="address" class="form-control" placeholder="">
+                    <label for="MS_height">Height</label>
+                    <input type="text" id="MS_height" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="telephone_no">Telephone No</label>
-                    <input type="text" id="telephone_no" class="form-control" placeholder="">
+                    <label for="MS_quantity">Quantity</label>
+                    <input type="text" id="MS_quantity" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" class="form-control" placeholder="">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="subtotal">Subtotal</label>
-                    <input type="text" id="subtotal" class="form-control" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="delivery_charge">Delivery Charge</label>
-                    <input type="text" id="delivery_charge" class="form-control" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="total_amount">Total Amount</label>
-                    <input type="text" id="total_amount" class="form-control" placeholder="">
-                </div>
-                <div class="form-group">
-                    <label for="validity_period">Validity Period</label>
-                    <input type="text" id="validity_period" class="form-control" placeholder="">
+                    <label for="MS_unitPrice">Unit Price</label>
+                    <input type="text" id="MS_unitPrice" class="form-control" placeholder="">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label for="prepared_by">Prepared By</label>
-                    <input type="text" id="prepared_by" class="form-control" placeholder="">
+                    <label for="MS_totalAmount">Total Amount</label>
+                    <input type="text" id="MS_totalAmount" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="MS_subTotal">Sub Total</label>
+                    <input type="text" id="MS_subTotal" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="MS_lessDiscount">Less Discount</label>
+                    <input type="text" id="MS_lessDiscount" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="MS_ingressEgress">INGRESS & ENGRESS</label>
+                    <input type="text" id="MS_ingressEgress" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="MS_overallTotal">Overall Total</label>
+                    <input type="text" id="MS_overallTotal" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="conforme_by">Conforme By</label>
@@ -191,20 +176,263 @@
                 </div>
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="text" id="status" class="form-control" placeholder="">
+                    <select name="MS_status" id="MS_status">
+                        <option value="MS_pending">Pending</option>
+                        <option value="MS_approved">Approved</option>
+                        <option value="MS_rejected">Rejected</option>
+                        
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="payment_terms">Payment Terms</label>
                     <input type="text" id="payment_terms" class="form-control" placeholder="">
                 </div>
-            </div>
-
+            
+           
             <div class="form-row full">
                 <div class="form-group">
                     <label for="terms_conditions">Terms & Conditions</label>
                     <textarea id="terms_conditions" class="form-control"></textarea>
                 </div>
+            </div></div>-->
+            <!-- Tabs -->
+<div class="tab-nav">
+    <a href="#" class="tab-link active">Quotation</a>
+    <a href="#" class="tab-link">Cost Summary</a>
+    <a href="#" class="tab-link">Saved Records</a>
+</div>
+
+<!-- Toolbar -->
+<div class="toolbar">
+    <button class="btn btn-primary">+ Add Item</button>
+    <button class="btn btn-secondary">Generate Quote</button>
+    <button class="btn btn-secondary">Print</button>
+    <button class="btn btn-text">💾 Save</button>
+</div>
+
+<!-- Main Card -->
+<div class="form-section">
+
+    <!-- Header -->
+    <div class="estimate-header">
+
+        <div>
+            <h3>
+                <i class='bx bx-calculator'></i>
+                Project Cost Estimation
+            </h3>
+            <p>Estimate project materials and pricing</p>
+        </div>
+
+        <button class="btn btn-primary">
+            <i class='bx bx-plus'></i>
+            Add Requirement
+        </button>
+
+    </div>
+
+
+    <!-- Branch -->
+
+    <div class="branch-card">
+
+        <label>Branch</label>
+
+        <select>
+
+            <option>Select Branch</option>
+            <option>SM Mall of Asia</option>
+            <option>BGC</option>
+            <option>Glorietta</option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Requirement Card -->
+
+    <div class="requirement-card">
+
+        <div class="requirement-header">
+
+            <h4>Requirement #1</h4>
+
+            <button class="delete-btn">
+
+                <i class='bx bx-trash'></i>
+
+            </button>
+
+        </div>
+
+        <div class="requirement-grid">
+
+            <div class="form-group full">
+
+                <label>Requirement Description</label>
+
+                <input type="text" placeholder="Sticker on Sintra">
+
             </div>
+
+            <div class="form-group">
+
+                <label>Width (CM)</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Height (CM)</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Quantity</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Unit Price</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Total Amount</label>
+
+                <input type="text" readonly>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Requirement Card -->
+
+    <div class="requirement-card">
+
+        <div class="requirement-header">
+
+            <h4>Requirement #2</h4>
+
+            <button class="delete-btn">
+
+                <i class='bx bx-trash'></i>
+
+            </button>
+
+        </div>
+
+        <div class="requirement-grid">
+
+            <div class="form-group full">
+
+                <label>Requirement Description</label>
+
+                <input type="text">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Width (CM)</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Height (CM)</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Quantity</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Unit Price</label>
+
+                <input type="number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Total Amount</label>
+
+                <input type="text" readonly>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Summary -->
+
+    <div class="summary-card">
+
+        <h4>Cost Summary</h4>
+
+        <div class="summary-row">
+
+            <span>Subtotal</span>
+
+            <input type="text" readonly>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Less Discount</span>
+
+            <input type="number">
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Ingress & Egress</span>
+
+            <input type="number">
+
+        </div>
+
+        <div class="summary-total">
+
+            <span>Total Amount</span>
+
+            <input type="text" readonly>
+
+        </div>
+
+    </div>
+
+</div>
         </div>
 
         <!-- Quotation Line Items Section -->

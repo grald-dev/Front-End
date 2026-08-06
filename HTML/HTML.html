@@ -9,26 +9,120 @@
     <link rel="stylesheet" href="../CSS/Css.css">
     <link rel="stylesheet" href="../Css/MarketingSales.css">
     <link rel="stylesheet" href="../Css/Technical.css">
+    <link rel="stylesheet" href="../Css/Warehouse.css">
+    <link rel="stylesheet" href="../Css/Logistics.css">
+    <link rel="stylesheet" href="../Css/Finance.css">
+    <link rel="stylesheet" href="../Css/Hr.css">
+    <link rel="stylesheet" href="../Css/Admin.css">
+    
     <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
-    <header class="top-header">
-    <div class="navbar">
-        <a href="#">
-            <i class="bx bx-search"></i>
-        </a>
-        <input type="text" class="search_box" placeholder="Search anything...">
+   
+    <!-- Sidebar Navigation -->
+<nav class="sidebar">
+
+    <div class="sidebar-header">
+
+        <i class="bx bx-menu" id="sidebar-toggle"></i>
+
+        <h4>miRhema</h4>
+
+        <i class="bx bx-lock" id="lock-icon"></i>
+
     </div>
 
-    <div class="header-right">
-        <img src="../image/profile.jpg" class="user-pic" onclick="toggleMenu()" alt="Profile Picture">
-        <span>Welcome, Admin</span>
+
+
+    <div class="menu_container">
+            <div class="menu_items">
+                <ul class="menu-item">
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="analytics">
+                            <i class="bx bx-bar-chart-square"></i>
+                            <span>Analytics Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="marketing">
+                            <i class="bx bx-store-alt"></i>
+                            <span>Marketing & Sales</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="technical">
+                            <i class="bx bx-palette"></i>
+                            <span>Technical & Design</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="production">
+                            <i class="bx bx-factory"></i>
+                            <span>Production & Job Order</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="warehouse">
+                            <i class="bx bx-package"></i>
+                            <span>Warehouse & Inventory</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="logistic">
+                            <i class="bx bx-truck"></i>
+                            <span>Logistic & Install</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="finance">
+                            <i class="bx bx-wallet"></i>
+                            <span>Finance & Accounting</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="human">
+                            <i class="bx bx-group"></i>
+                            <span>Human & Resources</span>
+                        </a>
+                    </li>
+
+                    <li class="item">
+                        <a href="#" class="link flex" data-page="admin">
+                            <i class="bx bx-cog"></i>
+                            <span>Admin Settings</span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
     </div>
+</nav>
+
+    <header class="top-header">
+        <div class="navbar">
+            <a href="#">
+                <i class="bx bx-search"></i>
+            </a>
+            <input type="text" class="search_box" placeholder="Search anything...">
+        </div>
+
+        <div class="header-right">
+            <img src="../image/profile.jpg" class="user-pic" onclick="toggleMenu()" alt="Profile Picture">
+            <span>Welcome, Admin</span>
+        </div>
     </header>
 
-    <!-- Sub Menu Profile Dropdown -->
+
+     <!-- Sub Menu Profile Dropdown -->
     <div class="sub-menu-wrap" id="subMenu">
         <div class="sub-menu">
             <div class="user-info">
@@ -57,85 +151,6 @@
         </div>
     </div>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar locked">
-    <div class="sidebar-header flex">
-        <i class="bx bx-menu" id="sidebar-open"></i>
-        <h4>miRhema</h4>
-        <i class="bx bx-lock" id="lock-icon"></i>
-        <i class="bx bx-x" id="sidebar-close"></i>
-    </div>
-
-    <div class="menu_container">
-        <div class="menu_items">
-            <ul class="menu-item">
-                <li class="item">
-                    <a href="#" class="link flex" data-page="analytics">
-                        <i class="bx bx-bar-chart-square"></i>
-                        <span>Analytics Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="marketing">
-                        <i class="bx bx-store-alt"></i>
-                        <span>Marketing & Sales</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="technical">
-                        <i class="bx bx-palette"></i>
-                        <span>Technical & Design</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="production">
-                        <i class="bx bx-factory"></i>
-                        <span>Production & Job Order</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="warehouse">
-                        <i class="bx bx-package"></i>
-                        <span>Warehouse & Inventory</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="logistic">
-                        <i class="bx bx-truck"></i>
-                        <span>Logistic & Install</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="finance">
-                        <i class="bx bx-wallet"></i>
-                        <span>Finance & Accounting</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="human">
-                        <i class="bx bx-group"></i>
-                        <span>Human & Resources</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="link flex" data-page="admin">
-                        <i class="bx bx-cog"></i>
-                        <span>Admin Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
     <!-- Main content: page HTML files get loaded in here -->
     <main class="main-content" id="main-content">
         <p>Loading...</p>
@@ -144,6 +159,8 @@
     <script src="../JAVASCRIPT/technical.js"></script>
     <script src="../JAVASCRIPT/marketing.js"></script>
     <script src="../JAVASCRIPT/jcsript.js"></script>
+    <script src="../JAVASCRIPT/production.js"></script>
+    <script src="../JAVASCRIPT/warehouse.js"></script>
     
 </body>
 </html>
