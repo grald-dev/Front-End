@@ -2,21 +2,23 @@
 
         <!-- Tab Navigation -->
         <div class="tab-nav">
-            <a href="#" class="tab-link active" onclick="switchTab(event, 'projectRequestSection')">Project Requests</a>
+            <a href="#" class="tab-link active" onclick="switchTab(event, 'projectRequestSection')">Create Client </a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'quotationBuilderSection')">Quotation Builder</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'salesLedgerSection')">Sales Ledger</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'conformeSection')">Conforme</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'materialRequisition')">Material Requisiton</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'savedRecordsSection')">Saved Records</a>
         </div>
 
         <!-- Page Body / Tab Contents -->
         <div id="projectRequestSection" class="tab-content active-content">
             
-            <!-- Action Toolbar -->
+            <!-- Action Toolbar
             <div class="toolbar">
                 <button class="btn btn-"><i class='bx bx-plus'></i> New Client</button>
                 <button class="btn btn-secondary"><i class='bx bx-plus'></i> New Project Request</button>
                 <button class="btn btn-text"><i class='bx bx-save'></i> Save Project</button>
-            </div>
+            </div> -->
 
             <!-- Client Information Form Section -->
             <div class="form-section">
@@ -26,30 +28,30 @@
                     
                     <div class="form-group">
                         <label for="company_name">Company Name</label>
-                        <input type="text" id="company_name" class="form-control" placeholder="">
+                        <input type="text" id="MS_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="telephone_no">Telephone No</label>
-                        <input type="text" id="telephone_no" class="form-control" placeholder="">
+                        <input type="text" id="MS_Telephone" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                      <div class="form-group">
                         <label for="payment_terms">Payment Terms</label>
-                        <input type="text" id="payment_terms" class="form-control" placeholder="">
+                        <input type="text" id="MS_PaymentTerms" class="form-group" placeholder="" pattern="[A-Za-z]" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                      <div class="form-group">
                         <label for="contact_person">Contact Person</label>
-                        <input type="text" id="contact_person" class="form-control" placeholder="">
+                        <input type="text" id="MS_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="email_address">Email Address</label>
-                        <input type="email" id="email_address" class="form-control" placeholder="">
+                        <input type="email" id="MS_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
                     </div>
                     <div class="form-group">
                         <label for="tin_number">TIN Number</label>
-                        <input type="text" id="tin_number" class="form-control" placeholder="">
+                        <input type="text" id="MS_TinNumber" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                    
                     
@@ -58,7 +60,7 @@
                 <div class="form-row full">
                         <div class="form-group">
                             <label for="company_address">Company Address</label>
-                            <textarea id="company_address" class="form-control"></textarea>
+                            <textarea id="MS_CompanyAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
                         </div>
                 </div>
             </div>
@@ -69,31 +71,31 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="MS_attention">Attention</label>
-                        <input type="text" id="MS_attention" class="form-control" placeholder="">
+                        <label for="MS_Attention">Attention</label>
+                        <input type="text" id="MS_Attention" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="MS_business_style">Business Style</label>
-                        <input type="text" id="MS_business_style" class="form-control" placeholder="">
+                        <input type="text" id="MS_BusinessDays" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="MS_client_subject">Client Subject</label>
-                        <input type="text   " id="MS_client_subject" class="form-control">
+                        <input type="text" id="MS_client_subject" class="form-control" placeholder="" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
                         <label for="MS_representative">Representative</label>
-                        <input type="text" id="MS_representative" class="form-control">
+                        <input type="text" id="MS_Representative" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="MS_contact_person">Contact Person</label>
-                        <input type="text" id="MS_contact_person" class="form-control" placeholder="">
+                        <input type="text" id="MS_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="MS_account_executive">Account Executive</label>
-                        <input type="text" id="MS_account_executive" class="form-control" placeholder="">
+                        <input type="text" id="MS_AccountExecutive" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     
                 </div>
@@ -196,11 +198,6 @@
                 </div>
             </div></div>-->
             <!-- Tabs -->
-<div class="tab-nav">
-    <a href="#" class="tab-link active">Quotation</a>
-    <a href="#" class="tab-link">Cost Summary</a>
-    <a href="#" class="tab-link">Saved Records</a>
-</div>
 
 <!-- Toolbar -->
 <div class="toolbar">
@@ -208,7 +205,7 @@
     <button class="btn btn-secondary">Generate Quote</button>
     <button class="btn btn-secondary">Print</button>
     <button class="btn btn-text">💾 Save</button>
-</div>
+</div> 
 
 <!-- Main Card -->
 <div class="form-section">
@@ -249,7 +246,6 @@
 
     </div>
 
-
     <!-- Requirement Card -->
 
     <div class="requirement-card">
@@ -272,77 +268,6 @@
 
                 <label>Requirement Description</label>
 
-                <input type="text" placeholder="Sticker on Sintra">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Width (CM)</label>
-
-                <input type="number">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Height (CM)</label>
-
-                <input type="number">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Quantity</label>
-
-                <input type="number">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Unit Price</label>
-
-                <input type="number">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>Total Amount</label>
-
-                <input type="text" readonly>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- Requirement Card -->
-
-    <div class="requirement-card">
-
-        <div class="requirement-header">
-
-            <h4>Requirement #2</h4>
-
-            <button class="delete-btn">
-
-                <i class='bx bx-trash'></i>
-
-            </button>
-
-        </div>
-
-        <div class="requirement-grid">
-
-            <div class="form-group full">
-
-                <label>Requirement Description</label>
-
                 <input type="text">
 
             </div>
@@ -350,9 +275,7 @@
             <div class="form-group">
 
                 <label>Width (CM)</label>
-
-                <input type="number">
-
+                <input type="text" id="MS_width" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             </div>
 
             <div class="form-group">
@@ -437,7 +360,7 @@
 
         <!-- Quotation Line Items Section -->
         <div class="form-section">
-            <h3 class="section-title">Quotation Line Items</h3>
+            <h3 class="section-title">Terms and Conditions</h3>
             <p style="color: #777; font-size: 0.9rem;">No line items added yet. Click "+ Generate Quotation" to populate.</p>
         </div>
         </div>
