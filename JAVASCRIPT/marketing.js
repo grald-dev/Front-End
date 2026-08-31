@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 // =========================
 // MARKETING PAGE
 // =========================
@@ -96,3 +97,5 @@ async function loadClientsIntoTable(event, sectionId) {
 
     }
 }
+=======
+>>>>>>> Stashed changes
