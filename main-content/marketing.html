@@ -22,13 +22,21 @@
 
             <!-- Client Information Form Section -->
             <div class="form-section">
-                <h3 class="section-title">Client Information</h3>
+                <div class="toolbar">
+                    <h3 class="section-title">Client Information</h3>
+                    <div class ="button-groups">
+                        <button class="btn btn-secondary" onClick="CreateClients()" ><i class='bx bx-plus'></i> New Project Request</button>
+                        <button class="btn btn-text"></button><i class='bx bx-save'></i> Save Project</button>
+                    </div>
+                    
+                </div>
                 
+
                 <div class="form-row">
                     
                     <div class="form-group">
                         <label for="company_name">Company Name</label>
-                        <input type="text" id="MS_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                        <input type="text" id="MS_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group">
                         <label for="telephone_no">Telephone No</label>
@@ -44,10 +52,6 @@
                      <div class="form-group">
                         <label for="contact_person">Contact Person</label>
                         <input type="text" id="MS_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email_address">Email Address</label>
-                        <input type="email" id="MS_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
                     </div>
                     <div class="form-group">
                         <label for="tin_number">TIN Number</label>
@@ -422,6 +426,24 @@
         <div id="savedRecordsSection" class="tab-content hidden">
             <div class="form-section">
                 <h3 class="section-title">Saved Records Content</h3>
+
+                <table class="clients-table">
+
+           <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Telephone</th>
+                    <th>Address</th>
+                    <th>TIN</th>
+                    <th>Payment Terms</th>
+                </tr>
+            </thead>
+
+            <tbody id="clientsTableBody">
+                <!-- JavaScript will put the API data here -->
+            </tbody>
+
+        </table>
             </div>
         </div>
 

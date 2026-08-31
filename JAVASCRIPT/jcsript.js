@@ -155,3 +155,13 @@ document.addEventListener("click", function(e){
     }
 
 });
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('./SW_CachedSite.js')
+            .then(reg => console.log('Service Worker: Registered'))
+            .catch(err => console.log(`Service Worker: Error: ${err}`));
+            
+    });
+}
