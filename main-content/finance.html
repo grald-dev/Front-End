@@ -1,0 +1,646 @@
+<!-- ==========================
+     TABS
+========================== -->
+
+<div class="tab-nav">
+
+    <a href="#"
+       class="tab-link active"
+       onclick="switchTab(event, 'apArBillingSection')">
+        AP, AR & Billing
+    </a>
+
+    <a href="#"
+       class="tab-link "
+       onclick="switchTab(event, 'cashProfitSection')">
+        Cash & Profit Computation
+    </a>
+
+    <a href="#"
+       class="tab-link"
+       onclick="switchTab(event, 'savedRecordsSection')">
+        📄 Saved Records
+    </a>
+
+</div>
+<!-- ==========================
+     AP, AR & BILLING
+========================== -->
+
+<div id="apArBillingSection" class="tab-content active-content">
+
+    <!-- Accounts Payable / Receivable -->
+<div class="form-section">
+
+    <h3 class="section-title">
+        Accounts Payable / Receivable
+    </h3>
+
+    <!-- Row 1 -->
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="invoiceRecordId">
+                Invoice/Record ID
+            </label>
+            <input
+                type="text"
+                id="invoiceRecordId"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="type">
+                Type (AP/AR)
+            </label>
+            <input
+                type="text"
+                id="type"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="clientSupplierName">
+                Client/Supplier Name
+            </label>
+            <input
+                type="text"
+                id="clientSupplierName"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="amount">
+                Amount
+            </label>
+            <input
+                type="number"
+                id="amount"
+                class="form-control"
+            >
+        </div>
+
+    </div>
+
+
+    <!-- Row 2 -->
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="billingDate">
+                Billing Date
+            </label>
+
+            <input
+                type="date"
+                id="billingDate"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="dueDate">
+                Due Date
+            </label>
+
+            <input
+                type="date"
+                id="dueDate"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="paymentTerms">
+                Payment Terms
+            </label>
+
+            <input
+                type="text"
+                id="paymentTerms"
+                class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="status">
+                Status
+            </label>
+
+            <input
+                type="text"
+                id="status"
+                class="form-control"
+            >
+        </div>
+
+    </div>
+
+
+    <!-- Billing Remarks -->
+    <div class="form-row full">
+
+        <div class="form-group">
+
+            <label for="billingRemarks">
+                Billing Remarks
+            </label>
+
+            <textarea
+                id="billingRemarks"
+                class="form-control"
+                rows="4"
+            ></textarea>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ==========================
+     CASH & PROFIT COMPUTATION
+========================== -->
+
+<div id="cashProfitSection" class="tab-content active">
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+
+        <button class="btn btn-primary">
+            + Journal Entry
+        </button>
+
+        <button class="btn btn-secondary">
+            Compute Margins
+        </button>
+
+        <button class="btn btn-secondary">
+            📊 Forecasting
+        </button>
+
+    </div>
+
+
+    <!-- ==========================
+         COST & PROFIT MARGIN
+    ========================== -->
+
+    <div class="form-section">
+
+        <h3 class="section-title">
+            Cost & Profit Margin Computation
+        </h3>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="job_order_id">
+                    Job Order ID
+                </label>
+
+                <input
+                    type="text"
+                    id="job_order_id"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="overhead_expenses">
+                    Overhead Expenses
+                </label>
+
+                <input
+                    type="number"
+                    id="overhead_expenses"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="labor_costs">
+                    Labor Costs
+                </label>
+
+                <input
+                    type="number"
+                    id="labor_costs"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="material_costs">
+                    Material Costs
+                </label>
+
+                <input
+                    type="number"
+                    id="material_costs"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="total_operational_cost">
+                    Total Operational Cost
+                </label>
+
+                <input
+                    type="number"
+                    id="total_operational_cost"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="project_revenue">
+                    Project Revenue
+                </label>
+
+                <input
+                    type="number"
+                    id="project_revenue"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="computed_profit_margin">
+                    Computed Profit Margin
+                </label>
+
+                <input
+                    type="text"
+                    id="computed_profit_margin"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="financial_status">
+                    Financial Status
+                </label>
+
+                <input
+                    type="text"
+                    id="financial_status"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         DAILY CASH MOVEMENT
+    ========================== -->
+
+    <div class="form-section">
+
+        <h3 class="section-title">
+            Daily Cash Movement & Journal Entry
+        </h3>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="entry_id">
+                    Entry ID
+                </label>
+
+                <input
+                    type="text"
+                    id="entry_id"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="entry_date">
+                    Entry Date
+                </label>
+
+                <input
+                    type="date"
+                    id="entry_date"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="account_code">
+                    Account Code
+                </label>
+
+                <input
+                    type="text"
+                    id="account_code"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="account_name">
+                    Account Name
+                </label>
+
+                <input
+                    type="text"
+                    id="account_name"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="account_type">
+                    Account Type
+                </label>
+
+                <input
+                    type="text"
+                    id="account_type"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="debit">
+                    Debit
+                </label>
+
+                <input
+                    type="number"
+                    id="debit"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="credit">
+                    Credit
+                </label>
+
+                <input
+                    type="number"
+                    id="credit"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="reference_type">
+                    Reference Type
+                </label>
+
+                <input
+                    type="text"
+                    id="reference_type"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="voucher_details">
+                    Voucher/Cheque Details
+                </label>
+
+                <input
+                    type="text"
+                    id="voucher_details"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="current_balance">
+                    Current Balance
+                </label>
+
+                <input
+                    type="number"
+                    id="current_balance"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================
+         TRANSPORTATION EXPENSES
+    ========================== -->
+
+    <div class="form-section">
+
+        <h3 class="section-title">
+            Transportation Expenses
+        </h3>
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="expense_id">
+                    Expense ID
+                </label>
+
+                <input
+                    type="text"
+                    id="expense_id"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="employee_id">
+                    Employee ID
+                </label>
+
+                <input
+                    type="text"
+                    id="employee_id"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="transport_date">
+                    Date
+                </label>
+
+                <input
+                    type="date"
+                    id="transport_date"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="transport_amount">
+                    Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="transport_amount"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="receipt_attached">
+                    Receipt Attached?
+                </label>
+
+                <input
+                    type="text"
+                    id="receipt_attached"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="from_location">
+                    From Location
+                </label>
+
+                <input
+                    type="text"
+                    id="from_location"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="to_location">
+                    To Location
+                </label>
+
+                <input
+                    type="text"
+                    id="to_location"
+                    class="form-control"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="prepared_by">
+                    Prepared By
+                </label>
+
+                <input
+                    type="text"
+                    id="prepared_by"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+                <label for="approved_by">
+                    Approved By
+                </label>
+
+                <input
+                    type="text"
+                    id="approved_by"
+                    class="form-control"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="form-row full">
+
+            <div class="form-group">
+
+                <label for="purpose_destination">
+                    Purpose of Destination
+                </label>
+
+                <textarea
+                    id="purpose_destination"
+                    class="form-control"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ==========================
+     SAVED RECORDS
+========================== -->
+
+<div id="savedRecordsSection" class="tab-content">
+
+    <div class="form-section">
+
+        <h3 class="section-title">
+            Saved Records
+        </h3>
+
+    </div>
+
+</div>
