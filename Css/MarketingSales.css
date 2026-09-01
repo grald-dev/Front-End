@@ -41,6 +41,14 @@
     margin-bottom:20px;
 }
 
+.toolbar{
+    background: #fff;
+    border-radius: 12px;
+    padding: 7px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
 .breadcrumb{
     display:flex;
     gap:35px;
@@ -141,6 +149,40 @@
     font-size:18px;
 }
 
+.requirement-button-group{
+    align-items: left;
+}
+
+/* ==========================================
+   QUOTATION OVERVIEW CARD
+========================================== */
+.quotation-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+.quotation-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    padding-bottom:15px;
+    border-bottom:1px solid #f1f5f9;
+}
+
+.quotation-header h4{
+    color:#2563eb;
+    font-size:18px;
+}
+
+.quotation-button-group{
+    align-items: left;
+}
+
 .delete-btn{
     width:38px;
     height:38px;
@@ -184,6 +226,23 @@
     text-transform:uppercase;
 }
 
+.form-group-conforme.full{
+    grid-column:1 / -1;
+}
+
+.form-group-conforme{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group-conforme label{
+    font-size:12px;
+    font-weight:600;
+    color:#4b5563;
+    margin-bottom:8px;
+    text-transform:uppercase;
+}
+
 /* ==========================================
    INPUTS
 ========================================== */
@@ -207,6 +266,33 @@
 }
 
 .form-group input[readonly]{
+    background:#f8fafc;
+    font-weight:600;
+}
+
+/* ==========================================
+   CONFORME OUTPUT
+========================================== */
+
+.form-group-conforme input,
+.form-group-conforme select{
+    height:30px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    padding:0 14px;
+    font-size:14px;
+    transition:.25s;
+    background:#fff;
+}
+
+.form-group-conforme input:focus,
+.form-group-conforme select:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form-group-conforme input[readonly]{
     background:#f8fafc;
     font-weight:600;
 }
@@ -290,6 +376,7 @@
     padding:12px 22px;
     border:none;
     border-radius:8px;
+    margin-left: 10px;
     cursor:pointer;
     font-size:14px;
     font-weight:600;
@@ -299,6 +386,7 @@
 .btn-primary{
     background:#2563eb;
     color:#fff;
+    margin-left: 500px;
 }
 
 .btn-primary:hover{
