@@ -375,7 +375,6 @@ document.addEventListener("click", function (event) {
 
 });
 
-<<<<<<< Updated upstream
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -385,18 +384,3 @@ if ('serviceWorker' in navigator) {
             
     });
 }
-=======
-
-
-// =====================================================
-// GLOBAL FUNCTIONS
-// =====================================================
-// These can be used by HTML onclick attributes if needed.
-//
-// Example:
-//
-// onclick="toggleSidebar()"
-// onclick="toggleLock()"
-// onclick="toggleMenu()"
-// =====================================================
->>>>>>> Stashed changes

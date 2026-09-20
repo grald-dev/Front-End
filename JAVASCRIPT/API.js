@@ -2,7 +2,9 @@ const API_BASE_URL = "http://localhost:5073/api";
 
 async function getClients() {
 
-    const response = await fetch(`${API_BASE_URL}/Clients`);
+    const response = await fetch(`${API_BASE_URL}/Clients/GetLocalClients`, {
+        cache: "no-store"
+    });
 
     if (!response.ok) {
         throw new Error("Failed to retrieve clients.");
@@ -12,27 +14,25 @@ async function getClients() {
 } 
 
 async function CreateClients() {
-    const response = await fetch(`${API_BASE_URL}/Clients`);
-    
-    const client_Name = document.getElementById('MS_CompanyName');
+    const client_Name = document.getElementById('Client_CompanyName');
     const Client_Name = client_Name.value;
 
-    const client_Telephone = document.getElementById('MS_Telephone');
+    const client_Telephone = document.getElementById('Client_Telephone');
     const Client_Telephone = client_Telephone.value;
 
-    const client_Address = document.getElementById('MS_CompanyAddress');
+    const client_Address = document.getElementById('Client_CompanyAddress');
     const Client_Address = client_Address.value;
 
-    const client_PaymentTerms = document.getElementById('MS_PaymentTerms');
+    const client_PaymentTerms = document.getElementById('Client_PaymentTerms');
     const Client_PaymentTerms = client_PaymentTerms.value;
 
-    const client_TinNumber = document.getElementById('MS_TinNumber');
+    const client_TinNumber = document.getElementById('Client_TinNumber');
     const Client_TinNumber = client_TinNumber.value;
     
     const payload = { Client_Name: Client_Name, Client_Telephone: Client_Telephone, Client_Address: Client_Address, Payment_Terms: Client_PaymentTerms, TIN: Client_TinNumber }
     console.log(payload);
    try {
-    const response = await fetch((`${API_BASE_URL}/Clients`), {
+    const response = await fetch((`${API_BASE_URL}/Clients/GetLocalClients`), {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -57,7 +57,7 @@ async function CreateClients() {
 
 async function GetDeliveryReceipts() {
 
-    const response = await fetch(`${API_BASE_URL}/Marketing/GetDeliveryReceipts`);
+    const response = await fetch(`${API_BASE_URL}/Marketing/GetLocalDeliveryReceipts`);
 
     if (!response.ok) {
         throw new Error("Failed to retrieve Delivery Receipts.");
@@ -65,12 +65,5 @@ async function GetDeliveryReceipts() {
 
     return await response.json();
 } 
-
-async function test() {
-    const try1 = await GetDeliveryReceipts();
-    console.log(try1);
-}
-
-test();
 
 
