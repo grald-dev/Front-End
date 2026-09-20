@@ -4,7 +4,7 @@
         <!-- Tab Navigation -->
         <div class="tab-nav">
             <a href="#" class="tab-link active" onclick="switchTab(event, 'prePressValidationSection')">Pre-Press & Validation</a>
-            <a href="#" class="tab-link" onclick="switchTab(event, 'materialRequisitionsSection')">Material Requisitions</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'TDMaterialRequisitionsSection')">Material Requisitions</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'savedRecordsSection')">Saved Records</a>
           
         </div>
@@ -28,7 +28,7 @@
                     <input type="text" id="project_id" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
-                    <label for="designer_assigned">Designer Assigned</label>
+                    <label for="designer_assigned">Graphic Artist</label>
                     <input type="text" id="designer_assigned" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
@@ -78,75 +78,116 @@
         </div>
     </div>
 
+    
+    <!-- Technical and Design Material Requisition -->
 
-    <div id="materialRequisitionsSection" class="tab-content">
-        <div class="action-bar">
+    <div id="TDMaterialRequisitionsSection" class="tab-content">
+
+        
+        
+
+        <div class="form-section">
+            <div class="quotation-header">
+
+             <h4>Material Requistion</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
+            
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_ControlNumber">Control Number</label>
+                    <input type="text" id="TDMaterialRequisition_ControlNumber" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_DateandTime">Date and Time</label>
+                    <input type="datetime-local" id="TDMaterialRequisition_DateandTime" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_From">From</label>
+                    <input type="text" id="TDMaterialRequisition_From" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_To">To</label>
+                    <input type="text" id="TDMaterialRequisition_To" class="form-control" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-section">
+
+            <div class="requirement-header">
+
+            <h3>Materials</h3>
+            <div class="requirement-button-group">
             <button class="btn btn-primary">
-                <i class="fas fa-plus"></i> Request Materials
+            <i class='bx bx-plus'></i>
+            Add
             </button>
-            <button class="btn btn-secondary">Track Requisition</button>
-            <button class="btn btn-secondary">
-                <i class="far fa-save"></i> Submit
+
+            <button class="delete-btn">
+            <i class="bx bx-trash" /></i>
             </button>
+            </div>
+
         </div>
 
-        <!-- Main Form Card -->
-        <div class="form-card">
-            <div class="card-header">
-                <h2>Technical Material Requisition</h2>
+             <div class="materialrequisition-grid">
+
+            <div class="form-group">
+                    <label for="TDMaterialRequisition_MaterialName">Materials Name</label>
+                    <input type="text" id="TDMaterialRequisition_MaterialName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
             </div>
-            
-            <form class="requisition-form">
-                <!-- Row 1 -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="reqId">Requisition ID</label>
-                        <input type="text" id="reqId" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="projectId">Project ID</label>
-                        <input type="text" id="projectId" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="itemRequired">Item Required</label>
-                        <input type="text" id="itemRequired" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="quantity">Quantity</label>
-                        <input type="text" id="quantity" placeholder="">
-                    </div>
-                </div>
 
-                <!-- Row 2 -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="dateRequested">Date Requested</label>
-                        <div class="input-with-icon">
-                            <input type="text" id="dateRequested" value="dd/mm/yyyy">
-                            <i class="far fa-calendar-alt"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="urgency">Urgency</label>
-                        <input type="text" id="urgency" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="status">Status</label>
-                        <input type="text" id="status" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="approvedBy">Approved By</label>
-                        <input type="text" id="approvedBy" placeholder="">
-                    </div>
-                </div>
+            <div class="form-group">
+                    <label for="TDMaterialRequisition_ProjectName">Project Name</label>
+                    <input type="text" id="TDMaterialRequisition_ProjectName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
 
-                <!-- Row 3 (Full Width) -->
-                <div class="form-row full-width">
-                    <div class="form-group">
-                        <label for="justification">Justification for insufficient materials</label>
-                        <textarea id="justification" rows="5"></textarea>
-                    </div>
+            <div class="form-group">
+                    <label for="TDMaterialRequisition_Supplier">Supplier</label>
+                    <input type="text" id="TDMaterialRequisition_Supplier" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="text" id="TDMaterialRequisition_Quantity" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Unit Cost</label>
+                <input type="text" id="TDMaterialRequisition_UnitCost" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Total Cost</label>
+                <input type="text" id="TDMaterialRequisition_TotalCost" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+        </div>
+
+        </div>
+        <br>
+        <div class="form-row">
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_SubmittedBy">Submitted by:</label>
+                    <input type="text" id="Conforme_AccountExecutive" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                 </div>
-            </form>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_NotedBy">Noted by:</label>
+                    <input type="text" id="MaterialRequisition_NotedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_ReceivedBy">Received by:</label>
+                    <input type="text" id="MaterialRequisition_ReceivedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="TDMaterialRequisition_ApprovedBy">Approved by:</label>
+                    <input type="text" id="MaterialRequisition_ApprovedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+            </div>
         </div>
     </div>

@@ -2,12 +2,17 @@
 
         <!-- Tab Navigation -->
         <div class="tab-nav">
-            <a href="#" class="tab-link active" onclick="switchTab(event, 'CreateClientSection')">Create Client </a>
+            <a href="#" class="tab-link active" onclick="switchTab(event, 'CreateClientSection')">Create Client</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'QuotationBuilderSection')">Quotation Builder</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'ConformeSection')">Conforme</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'PurchaseOrderSection')">Purchase Order</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'JobOrderSection')">Job Order</a>
-            <a href="#" class="tab-link" onclick="switchTab(event, 'MaterialRequisition')">Material Requisiton</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'MSMaterialRequisitionSection')">Material Requisiton</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'DeliveryReceiptSection')">Delivery Receipt</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'InstallationReportSection')">Installation Report</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'CollectionReceiptSection')">Collection Receipt</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'SavedRecordsSection')">Saved Records</a>
+            
         </div>
 
         <!-- Page Body / Tab Contents -->
@@ -25,40 +30,38 @@
                 <div class="toolbar">
                     <h3 class="section-title">Client Information</h3>
                     <div class ="button-groups">
-                        <button class="btn btn-secondary" onClick="CreateClients()" ><i class='bx bx-plus'></i> New Project Request</button>
                         <button class="btn btn-text"></button><i class='bx bx-save'></i> Save Project</button>
+                        <button class="btn btn-secondary" onClick="CreateClients()" ><i class='bx bx-plus'></i> Save Client</button>
                     </div>
-                    
                 </div>
-                
 
                 <div class="form-row">
                     
                     <div class="form-group">
-                        <label for="company_name">Company Name</label>
-                        <input type="text" id="Client_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
+                        <label for="Client_CompanyName">Company Name</label>
+                        <input type="text" id="Client_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
-                        <label for="telephone_no">Telephone No</label>
+                        <label for="Client_Telephone">Telephone No</label>
                         <input type="text" id="Client_Telephone" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                      <div class="form-group">
-                        <label for="payment_terms">Payment Terms</label>
+                        <label for="Client_PaymentTerms">Payment Terms</label>
                         <input type="text" id="Client_PaymentTerms" class="form-group" placeholder="" pattern="[A-Za-z]" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                      <div class="form-group">
-                        <label for="contact_person">Contact Person</label>
+                        <label for="Client_ContactPerson">Contact Person</label>
                         <input type="text" id="Client_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
-                        <label for="email_address">Email Address</label>
-                        <input type="email" id="MS_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                        <label for="Client_EmailAddress">Email Address</label>
+                        <input type="email" id="Client_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
                     </div>
                     <div class="form-group">
-                        <label for="tin_number">TIN Number</label>
+                        <label for="Client_TinNumber">TIN Number</label>
                         <input type="text" id="Client_TinNumber" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                    
@@ -67,7 +70,7 @@
                 </div>
                 <div class="form-row full">
                         <div class="form-group">
-                            <label for="company_address">Company Address</label>
+                            <label for="Client_CompanyAddress">Company Address</label>
                             <textarea id="Client_CompanyAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
                         </div>
                 </div>
@@ -79,30 +82,30 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="MS_Attention">Attention</label>
+                        <label for="ProjectRequest_Attention">Attention</label>
                         <input type="text" id="ProjectRequest_Attention" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
-                        <label for="MS_business_style">Business Style</label>
+                        <label for="ProjectRequest_BusinessDays">Business Style</label>
                         <input type="text" id="ProjectRequest_BusinessDays" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
-                        <label for="MS_client_subject">Client Subject</label>
+                        <label for="ProjectRequest_ClientSubject">Client Subject</label>
                         <input type="text" id="ProjectRequest_ClientSubject" class="form-control" placeholder="" pattern="[A-Za-z]" required>
                     </div>
                     <div class="form-group">
-                        <label for="MS_representative">Representative</label>
+                        <label for="ProjectRequest_Representative">Representative</label>
                         <input type="text" id="ProjectRequest_Representative" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="MS_contact_person">Contact Person</label>
+                        <label for="ProjectRequest_ContactPerson">Contact Person</label>
                         <input type="text" id="ProjectRequest_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
-                        <label for="MS_account_executive">Account Executive</label>
+                        <label for="ProjectRequest_AccountExecutive">Account Executive</label>
                         <input type="text" id="ProjectRequest_AccountExecutive" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     
@@ -119,16 +122,16 @@
 
          <div class="quotation-card">
 
-        <div class="quotation-header">
+            <div class="quotation-header">
 
-             <h4>Quotation Overview</h4>
-                <div class="quotation-button-group">
-                 <button class="btn btn-secondary">Generate Quote</button><i class='bx bx-generate'></i>
-                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>    
-                 <button class="btn btn-text">💾 Save</button><i class='bx bx-save'></i>
-                 </div>
+                <h4>Quotation Overview</h4>
+                    <div class="quotation-button-group">
+                    <button class="btn btn-secondary">Generate Quote</button><i class='bx bx-generate'></i>
+                    <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>    
+                    <button class="btn btn-text">Save</button><i class='bx bx-save'></i>
+                    </div>
 
-             </div>
+                </div>
 
 <!-- Main Card -->
 <div class="form-section">
@@ -251,8 +254,9 @@
                         </div>
 
                         <div class="form-group">
+                            <br>
                             <h3 class="section-title">Project Owner</h3>
-                            <input type="email" id="Quotation_ProjectOwner" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                            <input type="text" id="Quotation_ProjectOwner" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                         </div>
                 </div>
                 </div>    
@@ -265,35 +269,45 @@
         <div id="ConformeSection" class="tab-content active-content">
             
             <div class="form-section">
-                <h3 class="section-title">Conforme</h3>
+            <div class="quotation-header">
+
+             <h4>Conforme</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
                 
                 <div class="form-row">
                     
                     <div class="form-group-conforme">
-                        <label for="company_name">Company Name</label>
+                        <label for="Conforme_CompanyName">Company Name</label>
                         <input type="text" id="Conforme_CompanyName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="telephone_no">Telephone No</label>
+                        <label for="Conforme_Telephone">Telephone No</label>
                         <input type="text" id="Conforme_Telephone" class="form-group-conforme" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required disabled>
                     </div>
                      <div class="form-group-conforme">
-                        <label for="payment_terms">Payment Terms</label>
+                        <label for="Conforme_PaymentTerms">Payment Terms</label>
                         <input type="text" id="Conforme_PaymentTerms" class="form-group-conforme" placeholder="" pattern="[A-Za-z]" required disabled>
                     </div>
                 </div>
 
                 <div class="form-row">
                      <div class="form-group-conforme">
-                        <label for="contact_person">Contact Person</label>
+                        <label for="Conforme_ContactPerson">Contact Person</label>
                         <input type="text" id="Conforme_ContactPerson" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="email_address">Email Address</label>
+                        <label for="Conforme_EmailAddress">Email Address</label>
                         <input type="email" id="Conforme_EmailAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="tin_number">TIN Number</label>
+                        <label for="Conforme_TinNumber">TIN Number</label>
                         <input type="text" id="Conforme_TinNumber" class="form-group-conforme" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required disabled>
                     </div>
                    
@@ -301,8 +315,8 @@
                 </div>
                 <div class="form-row full">
                         <div class="form-group-conforme">
-                            <label for="company_address">Company Address</label>
-                            <input type="email" id="Conforme_EmailAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
+                            <label for="Conforme_CompanyAddress">Company Address</label>
+                            <input type="email" id="Conforme_CompanyAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
                         </div>
                 </div>
             </div>
@@ -313,30 +327,30 @@
 
                 <div class="form-row">
                     <div class="form-group-conforme">
-                        <label for="MS_Attention">Attention</label>
+                        <label for="Conforme_Attention">Attention</label>
                         <input type="text" id="Conforme_Attention" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="MS_business_style">Business Style</label>
+                        <label for="Conforme_BusinessDays">Business Style</label>
                         <input type="text" id="Conforme_BusinessDays" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="MS_client_subject">Client Subject</label>
+                        <label for="Conforme_ClientSubject">Client Subject</label>
                         <input type="text" id="Conforme_ClientSubject" class="form-control" placeholder="" pattern="[A-Za-z]" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="MS_representative">Representative</label>
+                        <label for="Conforme_Representative">Representative</label>
                         <input type="text" id="Conforme_Representative" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group-conforme">
-                        <label for="MS_contact_person">Contact Person</label>
+                        <label for="Conforme_ContactPerson">Contact Person</label>
                         <input type="text" id="Conforme_ContactPerson" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
-                        <label for="MS_account_executive">Account Executive</label>
+                        <label for="Conforme_AccountExecutive">Account Executive</label>
                         <input type="text" id="Conforme_AccountExecutive" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     
@@ -425,77 +439,80 @@
                 </div> 
 
 </div>
-        </div>
-                
-        </div>
-        </div>
-        </div>
-
-
-
+        
 
 
         <!-- Job Order Section -->
         <div id="JobOrderSection" class="tab-content hidden">
 
         <div class="form-section">
-            <h3 class="section-title">Job Order Details</h3>
+            <div class="quotation-header">
+
+             <h4>Job Order</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
             
             <div class="form-row">
                 <div class="form-group">
-                    <label for="Title">Title</label>
-                    <input type="text" id="JobOrder_Title" class="form-control" placeholder="" required disabled>
+                    <label for="JobOrder_Client">Client</label>
+                    <input type="text" id="JobOrder_Client" class="form-control" placeholder="" required >
                 </div>
                 <div class="form-group">
-                    <label for="ClientID">Client ID</label>
-                    <input type="text" id="JobOrder_ClientID" class="form-control" placeholder="" required disabled>
+                    <label for="JobOrder_Address">Address</label>
+                    <input type="text" id="JobOrder_Address" class="form-control" placeholder="" required disabled>
                 </div>
                 <div class="form-group">
-                    <label for="QutotationID">Quotation ID</label>
-                    <input type="text" id="JobOrder_QuotationID" class="form-control" placeholder="" required disabled>
+                    <label for="JobOrder_TelephoneNo">Telephone No.</label>
+                    <input type="text" id="JobOrder_TelephoneNo" class="form-control" placeholder="" required disabled>
                 </div>
                 <div class="form-group">
-                    <label for="ProjectID">Project ID</label>
-                    <input type="text" id="JobOrder_ProjectID" class="form-control" placeholder="" required disabled>
+                    <label for="JobOrder_ContactPerson">Contact Person</label>
+                    <input type="text" id="JobOrder_ContactPerson" class="form-control" placeholder="" required disabled>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="JobOrder_DateandTime">Date and Time Created</label>
-                    <input type="datetime-local" id="JobOrder_Date" class="form-control" placeholder="">
+                    <input type="datetime-local" id="JobOrder_DateandTime" class="form-control" placeholder="" required>
                     
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_TargetDeliveryDate">Target Delivery Date</label>
-                    <input type="datetime-local" id="JobOrder_TargetDeliveryDate" class="form-control" placeholder="">
+                    <input type="datetime-local" id="JobOrder_TargetDeliveryDate" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_DateDelivered">Date Delivered</label>
-                    <input type="datetime-local" id="JobOrder_DateDelivered" class="form-control" placeholder="">
+                    <input type="datetime-local" id="JobOrder_DateDelivered" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_InstallationDate">Installation Date</label>
-                    <input type="datetime-local" id="JobOrder_InstallationDate" class="form-control" placeholder="">
+                    <input type="datetime-local" id="JobOrder_InstallationDate" class="form-control" placeholder="" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="date_of_transaction">Material Code</label>
-                    <input type="text" id="JobOrder_Date" class="form-control" placeholder="">
+                    <input type="text" id="JobOrder_Date" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="payment_mode">Width</label>
-                    <input type="text" id="JobOrder_PaymentMode" class="form-control" placeholder="">
+                    <input type="text" id="JobOrder_PaymentMode" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="reference_number">Height</label>
-                    <input type="text" id="JobOrder_ReferenceNumber" class="form-control" placeholder="">
+                    <input type="text" id="JobOrder_ReferenceNumber" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="ledger_status">Quantity</label>
-                    <input type="text" id="JobOrder_Quantity" class="form-control" placeholder="">
+                    <input type="text" id="JobOrder_Quantity" class="form-control" placeholder="" required>
                 </div>
             </div>
 
@@ -507,6 +524,509 @@
             </div>
         </div>
         </div>
+
+
+
+        <!-- Marketing and Sales Material Requistion -->
+        <div id="MSMaterialRequisitionSection" class="tab-content hidden">
+
+        <div class="form-section">
+            <div class="quotation-header">
+
+             <h4>Material Requistion</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
+            
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_ControlNumber">Control Number</label>
+                    <input type="text" id="MSMaterialRequisition_ControlNumber" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_DateandTime">Date and Time</label>
+                    <input type="datetime-local" id="MSMaterialRequisition_DateandTime" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_From">From</label>
+                    <input type="text" id="MSMaterialRequisition_From" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_To">To</label>
+                    <input type="text" id="MSMaterialRequisition_To" class="form-control" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-section">
+
+            <div class="requirement-header">
+
+            <h3>Materials</h3>
+            <div class="requirement-button-group">
+            <button class="btn btn-primary">
+            <i class='bx bx-plus'></i>
+            Add
+            </button>
+
+            <button class="delete-btn">
+            <i class="bx bx-trash" /></i>
+            </button>
+            </div>
+
+        </div>
+
+             <div class="materialrequisition-grid">
+
+            <div class="form-group">
+                    <label for="MSMaterialRequisition_MaterialName">Materials Name</label>
+                    <input type="text" id="MSMaterialRequisition_MaterialName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="MSMaterialRequisition_ProjectName">Project Name</label>
+                    <input type="text" id="MSMaterialRequisition_ProjectName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="MSMaterialRequisition_Supplier">Supplier</label>
+                    <input type="text" id="MSMaterialRequisition_Supplier" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="text" id="MSMaterialRequisition_Quantity" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Unit Cost</label>
+                <input type="text" id="MSMaterialRequisition_UnitCost" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                <label>Total Cost</label>
+                <input type="text" id="MSMaterialRequisition_TotalCost" class="form-control" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+            </div>
+        </div>
+
+        </div>
+        <br>
+        <div class="form-row">
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_SubmittedBy">Submitted by:</label>
+                    <input type="text" id="MSMaterialRequisition_SubmittedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_NotedBy">Noted by:</label>
+                    <input type="text" id="MSMaterialRequisition_NotedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_ReceivedBy">Received by:</label>
+                    <input type="text" id="MSMaterialRequisition_ReceivedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MSMaterialRequisition_ApprovedBy">Approved by:</label>
+                    <input type="text" id="MSMaterialRequisition_ApprovedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Delivery Receipt -->
+        <div id="DeliveryReceiptSection" class="tab-content hidden">
+
+        <div class="form-section">
+            <div class="quotation-header">
+
+             <h4>Delivery Receipt</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
+            
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="DeliveryReceipt_Client">Client</label>
+                    <input type="text" id="DeliveryReceipt_Client" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryReceipt_Address">Address</label>
+                    <input type="text" id="DeliveryReceipt_Address" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryReceipt_DateandTime">Date and Time</label>
+                    <input type="datetime-local" id="DeliveryReceipt_DateandTime" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryReceipt_Terms">Terms</label>
+                    <input type="text" id="DeliveryReceipt_Terms" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+
+            <div class="requirement-header">
+
+            <h3>Items</h3>
+            <div class="deliveryreceipt-button-group">
+            <button class="btn btn-primary">
+            <i class='bx bx-plus'></i>
+            Add
+            </button>
+
+            <button class="delete-btn">
+            <i class="bx bx-trash" /></i>
+            </button>
+            </div>
+
+        </div>
+
+             <div class="deliveryreceiptitems-grid">
+
+            <div class="form-group">
+                    <label for="DeliveryReceipt_Quantity">Quantity</label>
+                    <input type="text" id="DeliveryReceipt_Quantity" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="DeliveryReceipt_Unit">Unit</label>
+                    <input type="text" id="DeliveryReceipt_Unit" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="DeliveryReceipt_Description">Description</label>
+                    <input type="text" id="DeliveryReceipt_Description" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+            </div>
+        </div>
+        </div>
+
+        <div class="form-row">
+                <div class="form-group">
+                    <label for="DeliveryReceipt_PreparedBy">Prepared by:</label>
+                    <input type="text" id="DeliveryReceipt_PreparedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryReceipt_ApprovedBy">Approved by:</label>
+                    <input type="text" id="DeliveryReceipt_ApprovedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="DeliveryReceipt_ReceivedBy">Received by:</label>
+                    <input type="text" id="DeliveryReceipt_ReceivedBy" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        <!-- Installation Report Section -->
+        <div id="InstallationReportSection" class="tab-content hidden">
+
+        <div class="form-section">
+            <div class="quotation-header">
+
+             <h4>Installation Report</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="MaterialRequisition_ControlNumber">Client Name</label>
+                    <input type="text" id="MaterialRequisition_ControlNumber" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_From">Project Name</label>
+                    <input type="text" id="MaterialRequisition_From" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_To">Location</label>
+                    <input type="text" id="MaterialRequisition_To" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_DateandTime">Date</label>
+                    <input type="datetime-local" id="MaterialRequisition_DateandTime" class="form-control" placeholder="">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="MaterialRequisition_ControlNumber">Time Started</label>
+                    <input type="text" id="MaterialRequisition_ControlNumber" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_From">Time Ended</label>
+                    <input type="text" id="MaterialRequisition_From" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_To">Installers</label>
+                    <textarea id="Client_CompanyAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                </div>
+            </div>
+
+            <!-- Client section feedback-->
+            <div class="form-section">
+                <h3 class="section-title">Fill up by client:</h3>
+
+                <div class="">
+                    <p>Are the installers on time in the site?</p><br>
+  
+                    <input type="radio" id="OnTimeYes" name="OnTime" value="Yes" checked>
+                    <label for="OnTimeyes">Yes</label>
+
+                    <input type="radio" id="OnTimeNo" name="OnTime" value="No">
+                    <label for="OnTimeno">No</label><br>
+                    <br>
+                </div>
+                <div class="">
+                    <p>Are the installers wearing company uniform and ID?</p><br>
+  
+                    <input type="radio" id="WearingUniformYes" name="WearingUniform" value="Yes" checked>
+                    <label for="WearingUniformYes">Yes</label>
+
+                    <input type="radio" id="WearingUniformNo" name="WearingUniform" value="No">
+                    <label for="WearingUniformNo">No</label><br>
+                    <br>
+                </div>
+                <div class="">
+                    <p>Are the graphics properly installed in the right place?</p><br>
+  
+                    <input type="radio" id="InstalledProperlyYes" name="InstalledProperly" value="Yes" checked>
+                    <label for="InstalledProperlyYes">Yes</label>
+
+                    <input type="radio" id="InstalledProperlyNo" name="InstalledProperly" value="No">
+                    <label for="InstalledProperlyNo">No</label><br>
+                    <br>
+                </div>
+                <div class="">
+                    <p>Are there any problems occured during installation?</p><br>
+  
+                    <input type="radio" id="ProblemsOccuredYes" name="ProblemsOccured" value="Yes" checked>
+                    <label for="ProblemsOccuredYes">Yes</label>
+
+                    <input type="radio" id="ProblemsOccuredNo" name="ProblemsOccured" value="No">
+                    <label for="ProblemsOccuredNo">No</label><br>
+                    <br>
+
+                    <p>If yes kindly: 
+                        Note: 
+
+                        <textarea id="ProblemsOccuredRemarks" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                    </p><br>
+                    
+                </div>
+
+                <div class="">
+                    <p>Is the are clean before they leave?</p><br>
+  
+                    <input type="radio" id="AreaCleanYes" name="AreaClean" value="Yes" checked>
+                    <label for="AreaCleanYes">Yes</label>
+
+                    <input type="radio" id="AreaCleanNo" name="AreaClean" value="No">
+                    <label for="AreaCleanNo">No</label><br>
+                    <br>
+                </div>
+
+                <div class="">
+                    <p>Are the installers well mannered?</p><br>
+  
+                    <input type="radio" id="WellManneredYes" name="WellMannered" value="Yes" checked>
+                    <label for="WellManneredYes">Yes</label>
+
+                    <input type="radio" id="WellManneredNo" name="WellMannered" value="No">
+                    <label for="WellManneredNo">No</label><br>
+                    <br>
+
+                    <p>Client Remarks: 
+                        <textarea id="WellManneredRemarks" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                    </p><br>
+                    
+                </div>
+
+                <!-- Installer section feedback-->
+            <div class="form-section">
+                <h3 class="section-title">Fill up by installer:</h3>
+
+                <div class="">
+                    <p>Are there any obstruction or obstacles in the area where the installation grapics needs to be placed?</p><br>
+  
+                    <input type="radio" id="ObstructionYes" name="Obstruction" value="Yes" checked>
+                    <label for="ObstructionYes">Yes</label>
+
+                    <input type="radio" id="ObstructionNo" name="Obstruction" value="No">
+                    <label for="ObstructionNo">No</label><br>
+                    <br>
+
+                    <p>If yes, please provide some details below: 
+                        <textarea id="ObstuctionRemarks" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                    </p><br>
+                </div>
+
+                <div class="">
+                    <p>Are there any damage on the graphics installed?</p><br>
+  
+                    <input type="radio" id="DamageGraphicsYes" name="DamageGraphics" value="Yes" checked>
+                    <label for="DamageGraphicsYes">Yes</label>
+
+                    <input type="radio" id="DamageGraphicsNo" name="DamageGraphics" value="No">
+                    <label for="DamageGraphicsNo">No</label><br>
+                    <br>
+
+                    <p>If yes, please provide some details below: 
+                        <textarea id="DamageGraphics" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                    </p><br>
+                </div>
+
+                <div class="">
+                    <p>Installer's Remarks: </p><br>
+                        <textarea id="InstallerRemarks" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
+                    </p><br>
+                </div>
+
+
+                <br>
+        </div>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="form-group">
+                    <label for="MaterialRequisition_SubmittedBy">Client's printed name and signature:</label>
+                    <input type="text" id="MaterialRequisition_SubmittedBy" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_SubmittedBy">Prepared by:</label>
+                    <input type="text" id="MaterialRequisition_SubmittedBy" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="MaterialRequisition_ReceivedBy">Approved by:</label>
+                    <input type="text" id="MaterialRequisition_ReceivedBy" class="form-control" placeholder="" required>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- Collection Receipt Section -->
+        <div id="CollectionReceiptSection" class="tab-content hidden">
+
+        <div class="form-section">
+            <div class="quotation-header">
+
+             <h4>Collection Receipt</h4>
+                <div class="quotation-button-group">
+                    
+                 <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>
+                 <button class="btn btn-secondary">Save</button><i class='bx bx-save'></i>    
+                 
+                 </div>
+
+             </div>
+            
+            <div class="form-row">
+                <div class="">
+                    <p><h2>Mode of Payment:</p></p><br></h2>
+                    
+                    <input type="radio" id="CollectionReceipt_Cash" name="PaymentMethod" value="Cash" checked>
+                    <label for="CollectionReceipt_Cash">Cash</label>
+
+                    <input type="radio" id="CollectionReceipt_Check" name="PaymentMethod" value="Check">
+                    <label for="CollectionReceipt_Check">Check</label><br>
+    
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_AccountNumber">Account Number</label>
+                    <input type="text" id="CollectionReceipt_AccountNumber" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_Date">Date</label>
+                    <input type="datetime-local" id="CollectionReceipt_Date" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <!-- Received From -->
+            <div class="form-section">
+                <h3 class="section-title">RECEIVED FROM</h3>
+
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="CollectionReceipt_RegisteredName">Registered Name</label>
+                    <input type="text" id="CollectionReceipt_RegisteredName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_TIN">TIN</label>
+                    <input type="text" id="CollectionReceipt_TIN" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_BusinessAddress">Business Address</label>
+                    <input type="text" id="CollectionReceipt_BusinessAddress" class="form-control" placeholder="" required>
+                </div>
+            </div>
+            </div>
+
+                <!-- Installer section feedback-->
+            <div class="form-section">
+                <h3 class="section-title">Description of Transaction</h3>
+
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="CollectionReceipt_PaymentFor">Payment For: </label>
+                    <input type="text" id="CollectionReceipt__PaymentFor" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_Amount">Amount</label>
+                    <input type="text" id="CollectionReceipt_Amount" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_TotalAmount">Total Paid Amount</label>
+                    <input type="text" id="CollectionReceipt_TotalAmount" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_InvoiceRef">Invoice Ref. No.</label>
+                    <input type="text" id="CollectionReceipt_InvoiceRef" class="form-control" placeholder="" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+                <h3 class="section-title">Check Details</h3>
+
+                <div class="form-row">
+                <div class="form-group">
+                    <label for="CollectionReceipt_CheckNumber">Check Number: </label>
+                    <input type="text" id="CollectionReceipt_CheckNumber" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_Bank">Bank: </label>
+                    <input type="text" id="CollectionReceipt_Bank" class="form-control" placeholder="" required>
+                </div>
+                <div class="form-group">
+                    <label for="CollectionReceipt_IssuedBy">Issued By:</label>
+                    <input type="text" id="CollectionReceipt_IssuedBy" class="form-control" placeholder="" required>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <br>
+        
+        </div>
+        
+    
 
         <!-- Saved Records Section -->
         <div id="savedRecordsSection" class="tab-content hidden">

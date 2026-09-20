@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 // =========================
 // MARKETING PAGE
 // =========================
@@ -73,7 +72,7 @@ async function loadClientsIntoTable(event, sectionId) {
             row.innerHTML = `
                 <td>${client.client_ID}</td>
                 <td>${client.client_Name ?? ""}</td>
-                <td>${client.client_Telephone ?? ""}</td>
+                <td>${client.client_Telephone ?? ""}</td>       
                 <td>${client.client_Address ?? ""}</td>
                 <td>${client.client_TinNumber ?? ""}</td>
                 <td>${client.client_PaymentTerms ?? ""}</td>
@@ -97,5 +96,3 @@ async function loadClientsIntoTable(event, sectionId) {
 
     }
 }
-=======
->>>>>>> Stashed changes

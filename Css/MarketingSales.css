@@ -16,7 +16,7 @@
     box-sizing:border-box;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar{    
     display:none;
 }
 
@@ -209,6 +209,17 @@
     gap:20px;
 }
 
+.materialrequisition-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+}
+
+.deliveryreceiptitems-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 .form-group.full{
     grid-column:1 / -1;
 }
@@ -479,3 +490,20 @@
   gap: 12px; /* spacing between each button */
   align-items: right;
 }
+
+/* Re-enable the scrollbar globally */
+html, body {
+  overflow: auto !important; /* Forces the browser to calculate scrolling */
+  scrollbar-width: auto !important; /* Restores Firefox scrollbar */
+  -ms-overflow-style: auto !important; /* Restores IE/Edge scrollbar */
+}
+
+/* Restores Chrome, Safari, and Opera scrollbars */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: block !important;
+}
+
+
+
+
