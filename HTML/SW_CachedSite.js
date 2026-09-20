@@ -22,16 +22,32 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
     console.log('ServiceWorkerFetching');
+
+    // Only handle HTTP/HTTPS requests
+    if (!e.request.url.startsWith('http://') &&
+        !e.request.url.startsWith('https://')) {
+        return;
+    }
+
+    // Only handle GET requests
+    if (e.request.method !== 'GET') {
+        return;
+    }
+
     e.respondWith(
         fetch(e.request)
-            .then(res =>{
+            .then(res => {
                 const resClone = res.clone();
-                caches
-                    .open(cacheName)
+
+                caches.open(cacheName)
                     .then(cache => {
                         cache.put(e.request, resClone);
                     });
+
                 return res;
-            }).catch(err => caches.match(e.request).then(res => res))
-    ); 
+            })
+            .catch(err => {
+                return caches.match(e.request);
+            })
+    );
 });

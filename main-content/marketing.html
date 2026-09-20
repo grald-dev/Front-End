@@ -3,8 +3,10 @@
         <!-- Tab Navigation -->
         <div class="tab-nav">
             <a href="#" class="tab-link active" onclick="switchTab(event, 'CreateClientSection')">Create Client</a>
+            <a href="#" class="tab-link active" onclick="switchTab(event, 'CreateClientSection')">Create Client</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'QuotationBuilderSection')">Quotation Builder</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'ConformeSection')">Conforme</a>
+            <a href="#" class="tab-link" onclick="switchTab(event, 'PurchaseOrderSection')">Purchase Order</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'PurchaseOrderSection')">Purchase Order</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'JobOrderSection')">Job Order</a>
             <a href="#" class="tab-link" onclick="switchTab(event, 'MSMaterialRequisitionSection')">Material Requisiton</a>
@@ -40,12 +42,16 @@
                     <div class="form-group">
                         <label for="Client_CompanyName">Company Name</label>
                         <input type="text" id="Client_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
+                        <label for="Client_CompanyName">Company Name</label>
+                        <input type="text" id="Client_CompanyName" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
+                        <label for="Client_Telephone">Telephone No</label>
                         <label for="Client_Telephone">Telephone No</label>
                         <input type="text" id="Client_Telephone" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
                      <div class="form-group">
+                        <label for="Client_PaymentTerms">Payment Terms</label>
                         <label for="Client_PaymentTerms">Payment Terms</label>
                         <input type="text" id="Client_PaymentTerms" class="form-group" placeholder="" pattern="[A-Za-z]" required>
                     </div>
@@ -54,13 +60,17 @@
                 <div class="form-row">
                      <div class="form-group">
                         <label for="Client_ContactPerson">Contact Person</label>
+                        <label for="Client_ContactPerson">Contact Person</label>
                         <input type="text" id="Client_ContactPerson" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                     </div>
                     <div class="form-group">
                         <label for="Client_EmailAddress">Email Address</label>
                         <input type="email" id="Client_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                        <label for="Client_EmailAddress">Email Address</label>
+                        <input type="email" id="Client_EmailAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
                     </div>
                     <div class="form-group">
+                        <label for="Client_TinNumber">TIN Number</label>
                         <label for="Client_TinNumber">TIN Number</label>
                         <input type="text" id="Client_TinNumber" class="form-group" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
                     </div>
@@ -71,6 +81,7 @@
                 <div class="form-row full">
                         <div class="form-group">
                             <label for="Client_CompanyAddress">Company Address</label>
+                            <label for="Client_CompanyAddress">Company Address</label>
                             <textarea id="Client_CompanyAddress" class="form-group" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"></textarea>
                         </div>
                 </div>
@@ -78,7 +89,23 @@
 
             <!-- Project Request Details Section -->
             <div class="form-section">
-                <h3 class="section-title">Project Request Details</h3>
+                <div class="client-picker">
+                    <label for="clientLookupInput">Select Client</label>
+                    <div class="client-picker-controls">
+                        <input type="text" id="clientLookupInput" placeholder="Select a saved client" readonly>
+                        <button type="button" id="openClientPicker" class="square-button" aria-label="Open saved clients" title="Open saved clients">
+                            <i class="bx bx-search"></i>
+                        </button>
+                    </div>
+                    <small>Select a saved client before editing the project request.</small>
+                </div>
+
+                <div class="toolbar">
+                    <h3 class="section-title">Project Request Details</h3>
+                    <div class="button-group">
+                        <button class="btn btn-text"><i class='bx bx-save'></i> Save Project</button>
+                    </div>
+                </div>
 
                 <div class="form-row">
                     <div class="form-group">
@@ -123,6 +150,7 @@
          <div class="quotation-card">
 
             <div class="quotation-header">
+            <div class="quotation-header">
 
                 <h4>Quotation Overview</h4>
                     <div class="quotation-button-group">
@@ -130,7 +158,25 @@
                     <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>    
                     <button class="btn btn-text">Save</button><i class='bx bx-save'></i>
                     </div>
+                <h4>Quotation Overview</h4>
+                    <div class="quotation-button-group">
+                    <button class="btn btn-secondary">Generate Quote</button><i class='bx bx-generate'></i>
+                    <button class="btn btn-secondary">Print</button><i class='bx bx-print'></i>    
+                    <button class="btn btn-text">Save</button><i class='bx bx-save'></i>
+                    </div>
 
+                </div>
+                </div>
+
+                <div class="client-picker">
+                    <label for="projectRequestLookupInput">Select Project Request</label>
+                    <div class="client-picker-controls">
+                        <input type="text" id="projectRequestLookupInput" placeholder="Select a project request" readonly>
+                        <button type="button" id="openProjectRequestPicker" class="square-button" aria-label="Open project requests" title="Open project requests">
+                            <i class="bx bx-search"></i>
+                        </button>
+                    </div>
+                    <small>Select a saved project request to view its details.</small>
                 </div>
 
 <!-- Main Card -->
@@ -255,7 +301,9 @@
 
                         <div class="form-group">
                             <br>
+                            <br>
                             <h3 class="section-title">Project Owner</h3>
+                            <input type="text" id="Quotation_ProjectOwner" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                             <input type="text" id="Quotation_ProjectOwner" class="form-group" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required>
                         </div>
                 </div>
@@ -266,7 +314,7 @@
 
         <!-- Conforme Section -->
 
-        <div id="ConformeSection" class="tab-content active-content">
+        <div id="ConformeSection" class="tab-content hidden">
             
             <div class="form-section">
             <div class="quotation-header">
@@ -285,13 +333,16 @@
                     
                     <div class="form-group-conforme">
                         <label for="Conforme_CompanyName">Company Name</label>
+                        <label for="Conforme_CompanyName">Company Name</label>
                         <input type="text" id="Conforme_CompanyName" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
                         <label for="Conforme_Telephone">Telephone No</label>
+                        <label for="Conforme_Telephone">Telephone No</label>
                         <input type="text" id="Conforme_Telephone" class="form-group-conforme" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required disabled>
                     </div>
                      <div class="form-group-conforme">
+                        <label for="Conforme_PaymentTerms">Payment Terms</label>
                         <label for="Conforme_PaymentTerms">Payment Terms</label>
                         <input type="text" id="Conforme_PaymentTerms" class="form-group-conforme" placeholder="" pattern="[A-Za-z]" required disabled>
                     </div>
@@ -300,13 +351,16 @@
                 <div class="form-row">
                      <div class="form-group-conforme">
                         <label for="Conforme_ContactPerson">Contact Person</label>
+                        <label for="Conforme_ContactPerson">Contact Person</label>
                         <input type="text" id="Conforme_ContactPerson" class="form-group-conforme" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')" required disabled>
                     </div>
                     <div class="form-group-conforme">
                         <label for="Conforme_EmailAddress">Email Address</label>
+                        <label for="Conforme_EmailAddress">Email Address</label>
                         <input type="email" id="Conforme_EmailAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
                     </div>
                     <div class="form-group-conforme">
+                        <label for="Conforme_TinNumber">TIN Number</label>
                         <label for="Conforme_TinNumber">TIN Number</label>
                         <input type="text" id="Conforme_TinNumber" class="form-group-conforme" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required disabled>
                     </div>
@@ -315,6 +369,8 @@
                 </div>
                 <div class="form-row full">
                         <div class="form-group-conforme">
+                            <label for="Conforme_CompanyAddress">Company Address</label>
+                            <input type="email" id="Conforme_CompanyAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
                             <label for="Conforme_CompanyAddress">Company Address</label>
                             <input type="email" id="Conforme_CompanyAddress" class="form-group-conforme" placeholder="" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required disabled>
                         </div>
@@ -481,18 +537,22 @@
                 <div class="form-group">
                     <label for="JobOrder_DateandTime">Date and Time Created</label>
                     <input type="datetime-local" id="JobOrder_DateandTime" class="form-control" placeholder="" required>
+                    <input type="datetime-local" id="JobOrder_DateandTime" class="form-control" placeholder="" required>
                     
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_TargetDeliveryDate">Target Delivery Date</label>
                     <input type="datetime-local" id="JobOrder_TargetDeliveryDate" class="form-control" placeholder="" required>
+                    <input type="datetime-local" id="JobOrder_TargetDeliveryDate" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_DateDelivered">Date Delivered</label>
                     <input type="datetime-local" id="JobOrder_DateDelivered" class="form-control" placeholder="" required>
+                    <input type="datetime-local" id="JobOrder_DateDelivered" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="JobOrder_InstallationDate">Installation Date</label>
+                    <input type="datetime-local" id="JobOrder_InstallationDate" class="form-control" placeholder="" required>
                     <input type="datetime-local" id="JobOrder_InstallationDate" class="form-control" placeholder="" required>
                 </div>
             </div>
@@ -501,17 +561,21 @@
                 <div class="form-group">
                     <label for="date_of_transaction">Material Code</label>
                     <input type="text" id="JobOrder_Date" class="form-control" placeholder="" required>
+                    <input type="text" id="JobOrder_Date" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="payment_mode">Width</label>
+                    <input type="text" id="JobOrder_PaymentMode" class="form-control" placeholder="" required>
                     <input type="text" id="JobOrder_PaymentMode" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="reference_number">Height</label>
                     <input type="text" id="JobOrder_ReferenceNumber" class="form-control" placeholder="" required>
+                    <input type="text" id="JobOrder_ReferenceNumber" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group">
                     <label for="ledger_status">Quantity</label>
+                    <input type="text" id="JobOrder_Quantity" class="form-control" placeholder="" required>
                     <input type="text" id="JobOrder_Quantity" class="form-control" placeholder="" required>
                 </div>
             </div>
